@@ -6,45 +6,123 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="tr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="min-h-screen bg-gray-50 text-gray-900 antialiased">
+    <Header />
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+      <!-- Hero -->
+      <section class="grid gap-8 lg:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">🧑‍🚀 Merhaba, Astronot!</h1>
+          <p class="mt-4 text-lg md:text-xl text-gray-700">Bu, Astro ile yapılmış hafif ama şık bir başlangıç sayfasıdır. Kişisel blog, portfolyo veya proje sitesi için kolayca özelleştirebilirsin.</p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/blog" class="inline-flex items-center px-4 py-2 rounded-lg shadow-sm border hover:shadow-md">Blogu Keşfet</a>
+            <a href="/about" class="inline-flex items-center px-4 py-2 rounded-lg border hover:bg-gray-100">Hakkımda</a>
+            <button id="tts-btn" class="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700">Dinle (TTS)</button>
+          </div>
+
+          <p class="mt-6 text-sm text-gray-500">Bu şablon <code>astro.config.mjs</code> içinde bazı entegrasyonlarla gelir. Tailwind, React veya Vue eklemek çok kolay.</p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden shadow-md bg-white p-6">
+          <img alt="Astronaut illustration" src="/assets/astronaut-illustration.svg" class="w-full h-56 object-cover" />
+          <div class="mt-4">
+            <h3 class="font-semibold">Bugünün Öne Çıkanı</h3>
+            <p class="mt-2 text-sm text-gray-600">Kısa ve etkili bir içerik örneği. Buraya son blog yazını, projenin tanıtımını veya duyurunu koyabilirsin.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="p-6 bg-white rounded-2xl shadow-sm">
+          <h4 class="font-semibold">Hızlı</h4>
+          <p class="mt-2 text-sm text-gray-600">Astro'nun partial hydration yaklaşımı ile hızlı açılan sayfalar.</p>
+        </article>
+
+        <article class="p-6 bg-white rounded-2xl shadow-sm">
+          <h4 class="font-semibold">Basit</h4>
+          <p class="mt-2 text-sm text-gray-600">Kolay özelleştirilebilir bileşen yapısı. İstediğin UI kütüphanesini ekle.</p>
+        </article>
+
+        <article class="p-6 bg-white rounded-2xl shadow-sm">
+          <h4 class="font-semibold">Erişilebilir</h4>
+          <p class="mt-2 text-sm text-gray-600">Semantik HTML, uygun kontrast ve klavye dostu etkileşimler.</p>
+        </article>
+      </section>
+
+      <!-- Blog preview -->
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold">Son Yazılar</h2>
+        <ul class="mt-4 space-y-4">
+          <li class="p-4 bg-white rounded-lg shadow-sm">
+            <a href="/blog/example-post" class="flex justify-between items-start gap-4">
+              <div>
+                <h3 class="font-semibold">Başlangıç Rehberi: Astro ile İlk Projen</h3>
+                <p class="mt-1 text-sm text-gray-600">Adım adım rehber, deploy ve optimizasyon ipuçları.</p>
+              </div>
+              <time class="text-xs text-gray-400">Nov 21, 2025</time>
+            </a>
+          </li>
+          <li class="p-4 bg-white rounded-lg shadow-sm">
+            <a href="/blog/design-tips" class="flex justify-between items-start gap-4">
+              <div>
+                <h3 class="font-semibold">Minimal UI: Tasarım İpuçları</h3>
+                <p class="mt-1 text-sm text-gray-600">Temiz, okunabilir ve performans odaklı arayüzler oluştur.</p>
+              </div>
+              <time class="text-xs text-gray-400">Oct 10, 2025</time>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Newsletter / Contact -->
+      <section class="mt-12 bg-white p-6 rounded-2xl shadow-sm">
+        <h3 class="font-semibold">Bültene Katıl</h3>
+        <p class="mt-2 text-sm text-gray-600">Yeni yazılardan haberdar olmak için e-posta bırakabilirsin. (Örnek form, backend eklemen gerekiyor.)</p>
+        <form class="mt-4 flex flex-col sm:flex-row gap-3" on:submit="event.preventDefault(); alert('Thanks — backend yok!');">
+          <input aria-label="email" type="email" placeholder="you@ornek.com" required class="flex-1 rounded-lg border px-4 py-2" />
+          <button class="rounded-lg px-4 py-2 bg-indigo-600 text-white">Abone Ol</button>
+        </form>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mt-12">
+        <h2 class="text-2xl font-bold">Sıkça Sorulanlar</h2>
+        <details class="mt-4 p-4 bg-white rounded-lg shadow-sm">
+          <summary class="font-semibold">Bu site nasıl dağıtılır?</summary>
+          <p class="mt-2 text-sm text-gray-600">GitHub + Netlify/Vercel ile kolayca deploy edebilirsin. Repo'yu bağla ve build komutunu ayarla.</p>
+        </details>
+        <details class="mt-4 p-4 bg-white rounded-lg shadow-sm">
+          <summary class="font-semibold">Tailwind nasıl eklenir?</summary>
+          <p class="mt-2 text-sm text-gray-600">Astro dokümantasyonundaki Tailwind entegrasyon rehberini takip et: <code>npm install -D tailwindcss</code> ve konfigürasyon.</p>
+        </details>
+      </section>
+
+      <div class="mt-16"></div>
+    </main>
+
+    <Footer />
+
+    <script>
+      // Basit TTS butonu (tarayıcı destekliyorsa)
+      const ttsBtn = document.getElementById('tts-btn');
+      if (ttsBtn && 'speechSynthesis' in window) {
+        ttsBtn.addEventListener('click', () => {
+          const text = `Welcome to ${document.title}. Bu sayfa Astro ile oluşturuldu.`;
+          const utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'tr-TR';
+          speechSynthesis.cancel();
+          speechSynthesis.speak(utter);
+        });
+      } else if (ttsBtn) {
+        ttsBtn.addEventListener('click', () => alert('TTS tarayıcınız tarafından desteklenmiyor.'));
+      }
+    </script>
+  </body>
 </html>
